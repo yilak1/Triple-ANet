@@ -261,8 +261,8 @@ xs = tf.placeholder(tf.float32, shape=[batch_size, 128, 128, 3], name='images')
 ys = tf.placeholder(tf.int32, shape=[batch_size], name='label')
 lr = tf.placeholder("float", shape=[])
 
-train_image_batch, train_label_batch = utils.get_image_label_batch(config, shuffle=True, name='train3')
-test_image_batch, test_label_batch = utils.get_image_label_batch(config, shuffle=False, name='test3')
+train_image_batch, train_label_batch = utils.get_image_label_batch(config, shuffle=True, name='train')
+test_image_batch, test_label_batch = utils.get_image_label_batch(config, shuffle=False, name='test')
 
 ####pred = cos theta, ys_ = used to calculate loss function
 feature, pred, ys_, train_end_points, reg, regularization = triple_anet(xs, ys, label_count, drop_rate=1.0, decay=0.9, growth_k=growth_k, trainable=True, reuse=False)    
